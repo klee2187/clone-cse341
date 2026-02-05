@@ -1,1 +1,52 @@
+###
 GET http://localhost:8080
+
+###
+GET https://nathan-byui-api.onrender.com/temples HTTP/1.1 apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+
+###
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/696d617c538c66bb4bb60dbb
+
+###
+GET http://localhost:8080/contacts/696d61a9538c66bb4bb60dbd
+
+###
+GET http://localhost:8080/contacts/696d61c5538c66bb4bb60dbf
+
+###
+GET https://cse-341-96nn.onrender.com/contacts
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/696d617c538c66bb4bb60dbb
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/696d61a9538c66bb4bb60dbd
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/696d61c5538c66bb4bb60dbf
+
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/contacts/696d617c538c66bb4bb60dbb
+
+###
+PUT http://localhost:8080/contacts/696d61a9538c66bb4bb60dbd
+
+###
+PUT http://localhost:8080/contacts/696d61c5538c66bb4bb60dbf
+
+###
+DELETE http://localhost:8080/contacts/696d617c538c66bb4bb60dbb
+
+###
+DELETE http://localhost:8080/contacts/696d61a9538c66bb4bb60dbd
+
+###
+DELETE http://localhost:8080/contacts/696d61c5538c66bb4bb60dbf
