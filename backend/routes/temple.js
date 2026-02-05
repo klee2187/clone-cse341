@@ -1,9 +1,9 @@
-const routes = require('express').Router();
+const router = require('express').Router();
 const temples = require('../controllers/temple.js');
 
-routes.get('/', temples.findAll);
-routes.get('/:temple_id', temples.findOne);
+router.get('/', temples.findAll);
+router.get('/:temple_id', temples.findOne);
 
-routes.post('/', temples.create);
+router.post('/', temples.create);
 
-module.exports = routes;
+module.exports = router;

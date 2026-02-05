@@ -25,10 +25,10 @@
     "body-parser": "^2.2.2",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mongodb": "^7.0.0",
-    "mongoose": "^9.1.5",
-    "swagger-ui-express": "^5.0.1",
-    "swagger-autogen": "^2.23.7"
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.1.6",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

@@ -1,13 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
-const practiceRoutes = require('./routes/practice');
-const templeRoutes = require('./routes/temple')
-const contactsRoutes = require('./routes/contacts');
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const allRoutes = require('./routes');
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -18,12 +13,9 @@ app
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   })
-  .use('/contacts', contactsRoutes)
-  .use('/practice', practiceRoutes)
-  .use('/temple', templeRoutes)
-  .use('api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use('/', allRoutes); 
 
-mongodb.initDb((err, mongodb) => {
+mongodb.initDb((err) => {
   if (err) {
     console.log(err);
   } else {

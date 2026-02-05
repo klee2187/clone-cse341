@@ -13,7 +13,7 @@ const endpointsFiles = [
   './routes/index.js',
   './routes/contacts.js',
   './routes/temple.js',
-  './routes/lesson1.js',
+  './routes/practice.js',
 ];
  
 // generate swagger.json
