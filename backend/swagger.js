@@ -10,10 +10,11 @@ const doc = {
 };
 const outputFile = './swagger.json';
 const endpointsFiles = [
-  './routes/index.js',
   './routes/contacts.js',
-  './routes/temple.js',
+  './routes/index.js',
   './routes/practice.js',
+  './routes/professional.js',
+  './routes/temple.js'
 ];
  
 // generate swagger.json

@@ -1,23 +1,36 @@
-const db = require('../models');
-const Temple = db.temples;
+const mongodb = require('../db/connect');
+const objectId = require('mongodb').objectId;
 
 const apiKey =
   'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   // Validate request
   if (!req.body.name) {
-    res.status(400).send({ message: 'Content can not be empty!' });
-    return;
+    return res.status(400).send({ message: 'Content can not be empty!' });
   }
 
   // Create a Temple
-  const temple = new Temple({
+  const newTemple = {
     temple_id: req.body.temple_id,
     name: req.body.name,
     description: req.body.description,
     location: req.body.location,
-  });
+  };
+
+  try {
+    const result = await mongodb
+      .getDb()
+      .collection('temples')
+      .insertOne(newTemple);
+    
+      res.status(201).json(result);
+  } catch (err) {
+    res.status(500).send({
+      message: err.message || 'An error occurred while creating the temple.'
+    });
+  }
+  
   // Save Temple in the database
   temple
     .save(temple)
@@ -32,9 +45,10 @@ exports.create = (req, res) => {
     });
 };
 
-exports.findAll = (req, res) => {
+exports.findAll = async (req, res) => {
   console.log(req.header('apiKey'));
-  if (req.header('apiKey') === apiKey) {
+  if (req.header('apiKey') !== apiKey) {
+    return res.send('Invlalid apiKey, ')
     Temple.find(
       {},
       {
