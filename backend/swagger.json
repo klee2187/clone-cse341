@@ -5,12 +5,78 @@
     "description": "Contacts, Temple, and Professional API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "clone-cse341.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "apiKey"
+    }
+  },
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "temple_id": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "dedicated": {
+                  "example": "any"
+                },
+                "additionalInfo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/{id}": {
       "get": {
         "description": "",
@@ -152,12 +218,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -198,12 +258,6 @@
         "responses": {
           "204": {
             "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -220,12 +274,6 @@
         "responses": {
           "204": {
             "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -243,18 +291,12 @@
     "/temple/": {
       "get": {
         "description": "",
-        "parameters": [
-          {
-            "name": "apiKey",
-            "in": "header",
-            "type": "string",
-            "required": true,
-            "description": "API key required to access this endpoint"
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -264,13 +306,6 @@
       "post": {
         "description": "",
         "parameters": [
-          {
-            "name": "apiKey",
-            "in": "header",
-            "type": "string",
-            "required": true,
-            "description": "API key required to access this endpoint"
-          },
           {
             "name": "body",
             "in": "body",
@@ -283,10 +318,13 @@
                 "temple_id": {
                   "example": "any"
                 },
-                "description": {
+                "location": {
                   "example": "any"
                 },
-                "location": {
+                "dedicated": {
+                  "example": "any"
+                },
+                "additionalInfo": {
                   "example": "any"
                 }
               }
@@ -294,11 +332,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Created"
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -313,20 +354,43 @@
           {
             "name": "temple_id",
             "in": "path",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "apiKey",
-            "in": "header",
-            "type": "string",
             "required": true,
-            "description": "API key required to access this endpoint"
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/{temple_id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "temple_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -337,5 +401,10 @@
         }
       }
     }
-  }
+  },
+  "security": [
+    {
+      "apiKeyAuth": []
+    }
+  ]
 }
