@@ -1,0 +1,52 @@
+###
+curl -X GET https://cse-341-96nn.onrender.com/temple
+-H apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+###
+GET http://localhost:8080/professional
+
+###
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+
+###
+GET http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
+
+###
+GET http://localhost:8080/contacts/6986485155285e1fd9b26eea
+
+###
+GET https://cse-341-96nn.onrender.com/contacts
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/6986482755285e1fd9b26ee6
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/6986483d55285e1fd9b26ee8
+
+###
+GET https://cse-341-96nn.onrender.com/contacts/6986485155285e1fd9b26eea
+
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+
+###
+PUT http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
+
+###
+PUT http://localhost:8080/contacts/6986485155285e1fd9b26eea
+
+###
+DELETE http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+
+###
+DELETE http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
+
+###
+DELETE http://localhost:8080/contacts/6986485155285e1fd9b26eea
