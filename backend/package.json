@@ -23,13 +23,15 @@
   "homepage": "https://github.com/byui-cse/cse341-code-student#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongodb": "^7.1.0",
-    "swagger-autogen": "^2.23.7",
+    "mongoose": "^9.1.5",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "swagger-autogen": "^2.23.7"
   }
 }

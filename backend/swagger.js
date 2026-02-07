@@ -12,7 +12,6 @@ const outputFile = './swagger.json';
 const endpointsFiles = [
   './routes/contacts.js',
   './routes/index.js',
-  './routes/practice.js',
   './routes/professional.js',
   './routes/temple.js'
 ];
