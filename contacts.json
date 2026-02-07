@@ -1,0 +1,25 @@
+{
+    "contact": {
+        "firstName": "Racheal",
+        "lastName": "Bowthorpe",
+        "email": "rbow@test.com",
+        "favoriteColor": "blue",
+        "birthday": "10/01/1991"
+    },
+
+    "contact2": {
+        "firstName": "Tara",
+        "lastName": "Bergener",
+        "email": "tberg@test.com",
+        "favoriteColor": "orange",
+        "birthday": "01/01/1993"
+    },
+
+    "contact3": {
+        "firstName": "Robert",
+        "lastName": "Kelly",
+        "email": "rkelly@test.com",
+        "favoriteColor": "purple",
+        "birthday": "11/28/1994"
+    }
+}
