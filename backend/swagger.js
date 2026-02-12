@@ -7,8 +7,8 @@ const doc = {
   },
 
   // Use Render URL
-  host: 'clone-cse341.onrender.com',
-  schemes: ['https'],
+  host: 'localhost8080',
+  schemes: ['http'],
 
   // ADD SECURITY DEFINITIONS
   securityDefinitions: {

@@ -6,18 +6,6 @@ curl -X GET https://clone-cse341.onrender.com/temple
 GET http://localhost:8080/professional
 
 ###
-GET http://localhost:8080/contacts
-
-###
-GET http://localhost:8080/contacts/6986482755285e1fd9b26ee6
-
-###
-GET http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
-
-###
-GET http://localhost:8080/contacts/6986485155285e1fd9b26eea
-
-###
 GET https://clone-cse341.onrender.com/contacts
 
 ###
@@ -30,20 +18,50 @@ GET https://clone-cse341.onrender.com/contacts/6986483d55285e1fd9b26ee8
 GET https://clone-cse341.onrender.com/contacts/6986485155285e1fd9b26eea
 
 ###
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+
+###
+GET http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
+
+###
+GET http://localhost:8080/contacts/6986485155285e1fd9b26eea
+
+###
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
-###
-PUT http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+{
+    "firstName":"Ashley", 
+    "lastName":"Weaver", 
+    "email":"aWeaver@test.com", 
+    "favoriteColor":"Brown", 
+    "birthday":"06/19/2000"
+}
 
 ###
-PUT http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
+PUT http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+Content-Type: application/json
+{
+    
+"firstName": "Racheal",
+"lastName": "Bowthorpe",
+"email": "shmegan@test.com",
+"favoriteColor": "blue",
+"birthday": "10/01/1991"
+}
+
+
+###
+PUT http://localhost:8080/contacts/6986483d55285e1fd9b26ee8 
 
 ###
 PUT http://localhost:8080/contacts/6986485155285e1fd9b26eea
 
 ###
-DELETE http://localhost:8080/contacts/6986482755285e1fd9b26ee6
+DELETE http://localhost:8080/contacts/6986482755285e1fd9b26ee6 HTTP/1.1
 
 ###
 DELETE http://localhost:8080/contacts/6986483d55285e1fd9b26ee8
