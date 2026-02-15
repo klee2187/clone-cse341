@@ -41,7 +41,8 @@ const getSingle = async (req, res, next) => {
                 res.status(400).json({ message: err });
             }
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(lists[0]);});
+            res.status(200).json(lists[0]);
+        });
 };  
 
 const addContact = async (req, res) => {
